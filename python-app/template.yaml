@@ -28,6 +28,7 @@ spec:
             - prod
 
   steps:
+    # renders a template
     - id: fetch-base
       name: Fetch Base
       action: fetch:template
@@ -37,6 +38,7 @@ spec:
           app_name: ${{parameters.component_id}}
           app_env: ${{parameters.environment}}
 
+    # creates a github repo
     - id: publish
       name: Publish
       action: publish:github
@@ -44,10 +46,11 @@ spec:
         allowedHosts:
           - github.com
         description: This is ${{ parameters.component_id }}
-        repoUrl: github.com?owner=ricardoandre-97&repo=${{parameters.component_id}}
+        repoUrl: github.com?owner=giorgiodg&repo=${{parameters.component_id}}
         protectDefaultBranch: false
         repoVisibility: public
 
+    # registers the component in backstage
     - id: register
       name: Register
       action: catalog:register

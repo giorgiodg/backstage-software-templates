@@ -1,0 +1,4 @@
+Test file
+
+The app's name is ${{parameters.component_id}}
+The app's env is ${{parameters.environment}}
