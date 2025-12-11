@@ -46,7 +46,7 @@ spec:
         description: This is ${{ parameters.component_id }}
         repoUrl: github.com?owner=giorgiodg-org&repo=${{parameters.component_id}}
         protectDefaultBranch: false
-        repoVisibility: public
+        repoVisibility: public ## for free GitHub plan
 
     # registers the component in backstage
     - id: register
